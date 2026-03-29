@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-3">Fat Loss HIIT Program</h2>
+<p class="text-muted">High-Intensity Interval Training to burn fat and improve endurance.</p>
+
+<hr>
+
+<!-- 🔹 CIRCUIT 1 -->
+<h4 class="mt-4">Circuit 1</h4>
+<p class="text-muted">Perform each exercise for 30 seconds, repeat 3 rounds</p>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/jumpsquat.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Jump Squats</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/burpee.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Burpees</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/mountain.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Mountain Climbers</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 🔹 CIRCUIT 2 -->
+<h4 class="mt-4">Circuit 2</h4>
+<p class="text-muted">Perform each exercise for 30 seconds, repeat 3 rounds</p>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/highknees.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">High Knees</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/pushup.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Push Ups</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/plank.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Plank</h6>
+<p class="text-muted">30 sec</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 🔹 FINISHER -->
+<hr class="mt-4">
+
+<h4 class="mt-4">Finisher</h4>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/burpee.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Burpees</h6>
+<p class="text-muted">3 × 15 reps</p>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

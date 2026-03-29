@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Food</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+<label>Food Name</label>
+<input type="text" name="food_name" id="foodInput" class="form-control" autocomplete="off" required>
+</div>
+
+<div class="mb-3">
+<label>Quantity (grams)</label>
+<input type="number" name="quantity" id="foodInput" class="form-control" required>
+<div id="suggestions" class="list-group"></div>
+
+<button class="btn btn-primary">Add Food</button>
+
+</form>
+
+<script>
+
+const input = document.getElementById("foodInput");
+const suggestions = document.getElementById("suggestions");
+
+input.addEventListener("keyup", async () => {
+
+    const query = input.value;
+
+    if (query.length < 2){
+        suggestions.innerHTML = "";
+        return;
+    }
+
+    const response = await fetch(`/search_food?q=${query}`);
+    const data = await response.json();
+
+    suggestions.innerHTML = "";
+
+    data.foods.forEach(food => {
+
+        const item = document.createElement("a");
+        item.classList.add("list-group-item","list-group-item-action");
+        item.textContent = food;
+
+        item.onclick = () => {
+            input.value = food;
+            suggestions.innerHTML = "";
+        };
+
+        suggestions.appendChild(item);
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

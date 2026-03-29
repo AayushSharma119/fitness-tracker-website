@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-3">Push Pull Legs Routine</h2>
+<p class="text-muted">A complete muscle-building program.</p>
+
+<hr>
+
+<!-- PUSH DAY -->
+<h4 class="mt-4">Day 1 – Push</h4>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/bench_press.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Bench Press</h6>
+<p class="text-muted">4 × 8 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/shoulder_press.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Shoulder Press</h6>
+<p class="text-muted">3 × 10 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/tricep_pushdown.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Triceps Pushdown</h6>
+<p class="text-muted">3 × 12 reps</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- PULL DAY -->
+<h4 class="mt-4">Day 2 – Pull</h4>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/pull_ups.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Pull Ups</h6>
+<p class="text-muted">4 × 8 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/barbell_rows.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Barbell Row</h6>
+<p class="text-muted">3 × 10 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/bicep_curl.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Bicep Curl</h6>
+<p class="text-muted">3 × 12 reps</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- LEGS DAY -->
+<h4 class="mt-4">Day 3 – Legs</h4>
+
+<div class="row mt-3">
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/squats.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Squats</h6>
+<p class="text-muted">4 × 8 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/leg_press.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Leg Press</h6>
+<p class="text-muted">3 × 10 reps</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/calf_raises.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Calf Raises</h6>
+<p class="text-muted">4 × 15 reps</p>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

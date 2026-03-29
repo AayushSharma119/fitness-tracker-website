@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Welcome {{ user.name }}</h2>
+<p class="text-muted">Welcome to FitBuddy — track your nutrition progress.</p>
+
+<div class="row mt-4">
+
+<div class="col-md-3">
+<div class="card text-center p-3">
+<h4>Calories</h4>
+<h2>{{ calories }} kcal</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center p-3">
+<h4>Protein</h4>
+<h2>{{ protein }} g</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center p-3">
+<h4>Carbs</h4>
+<h2>{{ carbs }} g</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center p-3">
+<h4>Fat</h4>
+<h2>{{ fat }} g</h2>
+</div>
+</div>
+
+</div>
+
+<a class="btn btn-success mt-4" href="/add_food/{{ user.id }}">
+Add Food
+</a>
+
+<!-- CALORIE PROGRESS BAR -->
+
+<div class="card mt-4">
+<div class="card-body">
+
+<h5 class="card-title">Calorie Progress</h5>
+
+{% if goal > 0 %}
+
+<p>{{ calories }} / {{ goal }} kcal</p>
+
+<div class="progress" style="height:25px;">
+
+<div class="progress-bar bg-success"
+role="progressbar"
+style="width: {{ (calories/goal*100)|round(1) }}%">
+
+{{ (calories/goal*100)|round(1) }}%
+
+</div>
+
+</div>
+
+{% else %}
+
+<p class="text-muted">
+Calculate your maintenance calories to enable progress tracking.
+</p>
+
+<a href="/calorie_calculator" class="btn btn-primary">
+Calculate Calories
+</a>
+
+{% endif %}
+
+</div>
+</div>
+
+<hr class="mt-5">
+
+<h4 class="mt-4">Macronutrient Intake</h4>
+
+<div style="width:400px; height:250px;">
+<canvas id="macroChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('macroChart');
+
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Protein', 'Carbs', 'Fat'],
+datasets: [{
+label: 'Grams',
+data: [{{ protein }}, {{ carbs }}, {{ fat }}],
+backgroundColor: [
+'#ff6384',
+'#36a2eb',
+'#ffce56'
+]
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+scales: {
+y: {
+beginAtZero: true
+}
+}
+}
+});
+
+</script>
+
+<hr class="mt-5">
+
+<h4>Today's Food Log</h4>
+
+<table class="table table-striped mt-3">
+
+<thead>
+<tr>
+<th>Food</th>
+<th>Quantity (g)</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for food in food_logs %}
+
+<tr>
+<td>{{ food.food_name }}</td>
+<td>{{ food.quantity }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

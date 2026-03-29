@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Body Fat Percentage Calculator</h2>
+
+<form method="POST" class="mt-4">
+
+<div class="mb-3">
+<label>Gender</label>
+<select name="gender" class="form-control">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+
+<div class="mb-3">
+<label>Height (cm)</label>
+<input type="number" step="0.1" name="height" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Neck (cm)</label>
+<input type="number" step="0.1" name="neck" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Waist (cm)</label>
+<input type="number" step="0.1" name="waist" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Hip (cm) – females only</label>
+<input type="number" step="0.1" name="hip" class="form-control">
+</div>
+
+<button class="btn btn-primary">Calculate Body Fat</button>
+
+</form>
+
+{% if bodyfat %}
+
+<hr class="mt-4">
+
+<h4>Your Body Fat: {{ bodyfat }}%</h4>
+
+{% if bodyfat < 10 %}
+<p class="text-warning">Very Lean</p>
+
+{% elif bodyfat < 18 %}
+<p class="text-success">Athletic</p>
+
+{% elif bodyfat < 25 %}
+<p class="text-primary">Average</p>
+
+{% else %}
+<p class="text-danger">High Body Fat</p>
+
+{% endif %}
+
+{% endif %}
+
+{% endblock %}

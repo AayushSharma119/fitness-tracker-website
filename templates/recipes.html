@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+
+<!-- 🔹 SIDEBAR -->
+<div class="col-md-3">
+
+<div class="card shadow-sm p-3">
+
+<h5 class="mb-3">Categories</h5>
+
+<div class="list-group">
+
+<a href="#veg" class="list-group-item list-group-item-action">
+Veg Recipes
+</a>
+
+<a href="#nonveg" class="list-group-item list-group-item-action">
+Non-Veg Recipes
+</a>
+
+<a href="#vegan" class="list-group-item list-group-item-action">
+Vegan Recipes
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 🔹 MAIN CONTENT -->
+<div class="col-md-9">
+
+<h2>High Protein Recipes</h2>
+<p class="text-muted">Fuel your body with protein-rich meals.</p>
+
+<!-- 🥦 VEG -->
+<h4 id="veg" class="mt-4">Veg Recipes</h4>
+
+<div class="row mt-3">
+
+<!-- Paneer Bowl -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/paneer.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Paneer Protein Bowl</h6>
+<p class="text-muted">High protein vegetarian meal</p>
+<span class="badge bg-success">25g Protein</span>
+<a href="/recipe/paneer" class="btn btn-dark btn-sm mt-2">View Full Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Lentil Curry -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/dal.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Dal Tadka</h6>
+<p class="text-muted">Rich in plant protein</p>
+<span class="badge bg-success">18g Protein</span>
+<a href="/recipe/dal" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Chickpea Salad -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/chickpeas.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Chickpea Salad</h6>
+<p class="text-muted">Healthy and protein packed</p>
+<span class="badge bg-success">20g Protein</span>
+<a href="/recipe/chickpea" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 🍗 NON-VEG -->
+<h4 id="nonveg" class="mt-4">Non-Veg Recipes</h4>
+
+<div class="row mt-3">
+
+<!-- Chicken -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Grilled Chicken</h6>
+<p class="text-muted">Lean protein meal</p>
+<span class="badge bg-danger">35g Protein</span>
+<a href="/recipe/chicken" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Eggs -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/eggs.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Boiled Eggs</h6>
+<p class="text-muted">Simple high protein snack</p>
+<span class="badge bg-danger">12g Protein</span>
+<a href="/recipe/eggs" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Fish -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/fish.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Grilled Fish</h6>
+<p class="text-muted">High protein + omega 3</p>
+<span class="badge bg-danger">30g Protein</span>
+<a href="/recipe/fish" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 🌱 VEGAN -->
+<h4 id="vegan" class="mt-4">Vegan Recipes</h4>
+
+<div class="row mt-3">
+
+<!-- Tofu -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/tofu.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Tofu Stir Fry</h6>
+<p class="text-muted">Plant-based protein meal</p>
+<span class="badge bg-success">22g Protein</span>
+<a href="/recipe/tofu" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Quinoa -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/quinoa.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Quinoa Bowl</h6>
+<p class="text-muted">Complete protein source</p>
+<span class="badge bg-success">18g Protein</span>
+<a href="/recipe/quinoa" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+<!-- Peanut Salad -->
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm h-100">
+<img src="{{ url_for('static', filename='images/peanut.jpg') }}" class="card-img-top">
+<div class="card-body">
+<h6 class="card-title">Peanut Salad</h6>
+<p class="text-muted">Healthy fats + protein</p>
+<span class="badge bg-success">15g Protein</span>
+<a href="/recipe/peanut" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}                                                                              
