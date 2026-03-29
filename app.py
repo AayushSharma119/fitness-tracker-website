@@ -15,9 +15,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)   # ✅ attach directly
+# ✅ IMPORTANT FIX
+db.init_app(app)
 
-# ✅ create tables
 with app.app_context():
     db.create_all()
 
@@ -449,8 +449,6 @@ def hiit():
     return render_template("hiit.html")
 
 if __name__ == "__main__":
-
- if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
 print(os.environ.get("DATABASE_URL"))
