@@ -9,11 +9,15 @@ import os
 app = Flask(__name__)
 app.secret_key = "fitnessbuddysecret"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    "DATABASE_URL",
+    "mysql+pymysql://root:golu1109@localhost/fitness_buddy"
+)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db.init_app(app)
+db = SQLAlchemy(app)   # ✅ attach directly
 
+# ✅ create tables
 with app.app_context():
     db.create_all()
 
@@ -448,3 +452,5 @@ if __name__ == "__main__":
 
  if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
+print(os.environ.get("DATABASE_URL"))
