@@ -4,6 +4,7 @@ from models.user import User, db
 from datetime import date
 from sqlalchemy import text
 import math
+import os
 
 app = Flask(__name__)
 app.secret_key = "fitnessbuddysecret"
@@ -442,4 +443,6 @@ def hiit():
     return render_template("hiit.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+
+ if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
