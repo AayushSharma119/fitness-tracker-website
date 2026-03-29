@@ -9,11 +9,13 @@ import os
 app = Flask(__name__)
 app.secret_key = "fitnessbuddysecret"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:golu1109@localhost/fitness_buddy'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
+with app.app_context():
+    db.create_all()
 
 @app.route("/")
 def home():
