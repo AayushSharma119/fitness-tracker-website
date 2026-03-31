@@ -178,7 +178,6 @@ def recipe_detail(name):
 
     recipes = {
 
-        # 🥦 VEG
         "paneer": {
             "name": "Paneer Protein Bowl",
             "description": "High-protein vegetarian meal",
