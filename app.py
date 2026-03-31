@@ -448,7 +448,24 @@ def bro_split():
 def hiit():
     return render_template("hiit.html")
 
+@app.route("/blogs")
+def blogs():
+    return render_template("blogs.html")
+
+
+@app.route("/blog/fat-loss")
+def fat_loss():
+    return render_template("fat_loss.html")
+
+
+@app.route("/blog/muscle-gain")
+def muscle_gain():
+    return render_template("muscle_gain.html")
+
+
+@app.route("/blog/diet-tips")
+def diet_tips():
+    return render_template("diet_tips.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-print(os.environ.get("DATABASE_URL"))

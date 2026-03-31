@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">Fitness Blogs</h2>
+
+    <div class="row">
+
+        <!-- Blog 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/fatloss.jpg') }}" 
+                     class="card-img-top" style="height:200px; object-fit:cover;">
+
+                <div class="card-body">
+                    <h5 class="card-title">Fat Loss Guide</h5>
+                    <p class="card-text">
+                        Learn how to lose fat effectively with proper diet and training.
+                    </p>
+
+                    <a href="/blog/fat-loss" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/muscle.jpg') }}" 
+                     class="card-img-top" style="height:200px; object-fit:cover;">
+
+                <div class="card-body">
+                    <h5 class="card-title">Muscle Gain Guide</h5>
+                    <p class="card-text">
+                        Build muscle with the right workout and nutrition plan.
+                    </p>
+
+                    <a href="/blog/muscle-gain" class="btn btn-success">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/diet.jpg') }}" 
+                     class="card-img-top" style="height:200px; object-fit:cover;">
+
+                <div class="card-body">
+                    <h5 class="card-title">Diet Tips</h5>
+                    <p class="card-text">
+                        Simple and practical diet tips for a healthy lifestyle.
+                    </p>
+
+                    <a href="/blog/diet-tips" class="btn btn-warning">Read More</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

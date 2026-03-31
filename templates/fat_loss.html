@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <!-- Title -->
+    <h1 class="text-center mb-4">Complete Guide to Fat Loss</h1>
+
+    <!-- Image -->
+    <div class="text-center mb-4">
+        <img src="{{ url_for('static', filename='images/fatloss.jpg') }}" 
+             class="img-fluid rounded" style="max-height: 400px;">
+    </div>
+
+    <!-- Introduction -->
+    <p>
+        Fat loss is one of the most common fitness goals. However, many people approach it incorrectly by starving themselves or doing excessive cardio. 
+        The key to effective fat loss is maintaining a sustainable calorie deficit while preserving muscle mass.
+    </p>
+
+    <!-- Section 1 -->
+    <h3 class="mt-4">What is Fat Loss?</h3>
+    <p>
+        Fat loss occurs when your body burns more calories than it consumes. This creates a calorie deficit, forcing your body to use stored fat as energy.
+    </p>
+
+    <!-- Section 2 -->
+    <h3 class="mt-4">Key Principles of Fat Loss</h3>
+    <ul>
+        <li><strong>Calorie Deficit:</strong> Consume fewer calories than your maintenance level.</li>
+        <li><strong>High Protein Diet:</strong> Helps preserve muscle and keeps you full.</li>
+        <li><strong>Strength Training:</strong> Prevents muscle loss and boosts metabolism.</li>
+        <li><strong>Consistency:</strong> Results come from long-term discipline.</li>
+    </ul>
+
+    <!-- Section 3 -->
+    <h3 class="mt-4">Best Foods for Fat Loss</h3>
+    <ul>
+        <li>Chicken breast</li>
+        <li>Eggs</li>
+        <li>Paneer / Tofu</li>
+        <li>Green vegetables</li>
+        <li>Fruits</li>
+    </ul>
+
+    <!-- Section 4 -->
+    <h3 class="mt-4">Workout Strategy</h3>
+    <p>
+        Combine strength training with cardio for best results:
+    </p>
+    <ul>
+        <li>Weight training: 4–5 times per week</li>
+        <li>Cardio (HIIT or walking): 3–4 times per week</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h3 class="mt-4">Common Mistakes to Avoid</h3>
+    <ul>
+        <li>Skipping meals</li>
+        <li>Eating too little protein</li>
+        <li>Overdoing cardio</li>
+        <li>Not tracking calories</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h3 class="mt-4">Pro Tips</h3>
+    <ul>
+        <li>Drink plenty of water</li>
+        <li>Sleep at least 7–8 hours</li>
+        <li>Track your progress weekly</li>
+    </ul>
+
+    <!-- Conclusion -->
+    <h3 class="mt-4">Conclusion</h3>
+    <p>
+        Fat loss is a gradual process that requires patience and consistency. Focus on building healthy habits rather than quick results. 
+        Stay consistent with your diet and workouts, and results will follow.
+    </p>
+
+</div>
+
+{% endblock %}

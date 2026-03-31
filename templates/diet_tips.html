@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <!-- Title -->
+    <h1 class="text-center mb-4">Healthy Diet Tips for a Better Lifestyle</h1>
+
+    <!-- Image -->
+    <div class="text-center mb-4">
+        <img src="{{ url_for('static', filename='images/diet.jpg') }}" 
+             class="img-fluid rounded" style="max-height: 400px;">
+    </div>
+
+    <!-- Introduction -->
+    <p>
+        A healthy diet is the foundation of good health and fitness. Whether your goal is fat loss, 
+        muscle gain, or simply staying fit, proper nutrition plays a crucial role in achieving results.
+    </p>
+
+    <!-- Section 1 -->
+    <h3 class="mt-4">What is a Balanced Diet?</h3>
+    <p>
+        A balanced diet includes the right proportions of carbohydrates, proteins, fats, vitamins, and minerals. 
+        It ensures your body gets all the nutrients it needs to function properly.
+    </p>
+
+    <!-- Section 2 -->
+    <h3 class="mt-4">Key Principles of Healthy Eating</h3>
+    <ul>
+        <li><strong>Eat Whole Foods:</strong> Focus on natural, unprocessed foods.</li>
+        <li><strong>Maintain Portion Control:</strong> Avoid overeating.</li>
+        <li><strong>Stay Hydrated:</strong> Drink plenty of water daily.</li>
+        <li><strong>Balance Macronutrients:</strong> Include protein, carbs, and fats in every meal.</li>
+    </ul>
+
+    <!-- Section 3 -->
+    <h3 class="mt-4">Best Foods to Include</h3>
+    <ul>
+        <li>Lean proteins (chicken, eggs, tofu)</li>
+        <li>Whole grains (rice, oats, whole wheat)</li>
+        <li>Fruits and vegetables</li>
+        <li>Healthy fats (nuts, seeds, olive oil)</li>
+    </ul>
+
+    <!-- Section 4 -->
+    <h3 class="mt-4">Foods to Limit</h3>
+    <ul>
+        <li>Processed foods</li>
+        <li>Excess sugar</li>
+        <li>Fried foods</li>
+        <li>Soft drinks</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h3 class="mt-4">Meal Timing Tips</h3>
+    <ul>
+        <li>Eat at regular intervals</li>
+        <li>Do not skip breakfast</li>
+        <li>Have a balanced pre- and post-workout meal</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h3 class="mt-4">Common Mistakes</h3>
+    <ul>
+        <li>Following extreme diets</li>
+        <li>Skipping meals</li>
+        <li>Not eating enough protein</li>
+        <li>Ignoring hydration</li>
+    </ul>
+
+    <!-- Section 7 -->
+    <h3 class="mt-4">Pro Tips</h3>
+    <ul>
+        <li>Plan your meals in advance</li>
+        <li>Track your calorie intake</li>
+        <li>Include variety in your diet</li>
+        <li>Stay consistent rather than perfect</li>
+    </ul>
+
+    <!-- Conclusion -->
+    <h3 class="mt-4">Conclusion</h3>
+    <p>
+        A healthy diet is not about strict restrictions but about making smarter food choices. 
+        Focus on consistency, balance, and sustainability for long-term success.
+    </p>
+
+</div>
+
+{% endblock %}

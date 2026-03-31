@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <!-- Title -->
+    <h1 class="text-center mb-4">Complete Guide to Muscle Gain</h1>
+
+    <!-- Image -->
+    <div class="text-center mb-4">
+        <img src="{{ url_for('static', filename='images/muscle.jpg') }}" 
+             class="img-fluid rounded" style="max-height: 400px;">
+    </div>
+
+    <!-- Introduction -->
+    <p>
+        Building muscle is not just about lifting heavy weights — it requires proper nutrition, 
+        structured training, and sufficient recovery. A consistent approach is key to long-term success.
+    </p>
+
+    <!-- Section 1 -->
+    <h3 class="mt-4">What is Muscle Gain?</h3>
+    <p>
+        Muscle gain (hypertrophy) happens when muscle fibers are stressed through resistance training 
+        and rebuild stronger during recovery.
+    </p>
+
+    <!-- Section 2 -->
+    <h3 class="mt-4">Key Principles of Muscle Growth</h3>
+    <ul>
+        <li><strong>Progressive Overload:</strong> Gradually increase weights or reps.</li>
+        <li><strong>Calorie Surplus:</strong> Eat more calories than your body burns.</li>
+        <li><strong>High Protein Intake:</strong> Essential for muscle repair and growth.</li>
+        <li><strong>Consistency:</strong> Stick to your plan for months, not days.</li>
+    </ul>
+
+    <!-- Section 3 -->
+    <h3 class="mt-4">Best Foods for Muscle Gain</h3>
+    <ul>
+        <li>Chicken breast</li>
+        <li>Eggs</li>
+        <li>Milk & dairy products</li>
+        <li>Rice & oats</li>
+        <li>Nuts & peanut butter</li>
+    </ul>
+
+    <!-- Section 4 -->
+    <h3 class="mt-4">Workout Strategy</h3>
+    <p>
+        Follow a structured workout plan:
+    </p>
+    <ul>
+        <li>Train 4–6 days per week</li>
+        <li>Focus on compound exercises (bench press, squat, deadlift)</li>
+        <li>Use splits like PPL or Upper-Lower</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h3 class="mt-4">Recovery & Sleep</h3>
+    <p>
+        Muscles grow during rest, not during workouts. Ensure:
+    </p>
+    <ul>
+        <li>7–8 hours of sleep daily</li>
+        <li>Rest days between intense sessions</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h3 class="mt-4">Common Mistakes</h3>
+    <ul>
+        <li>Not eating enough calories</li>
+        <li>Skipping protein intake</li>
+        <li>Poor exercise form</li>
+        <li>Overtraining without recovery</li>
+    </ul>
+
+    <!-- Section 7 -->
+    <h3 class="mt-4">Pro Tips</h3>
+    <ul>
+        <li>Track your workouts and progress</li>
+        <li>Stay consistent with diet</li>
+        <li>Increase weights gradually</li>
+    </ul>
+
+    <!-- Conclusion -->
+    <h3 class="mt-4">Conclusion</h3>
+    <p>
+        Muscle gain is a gradual process that requires patience and discipline. Focus on proper training, 
+        nutrition, and recovery to achieve sustainable results.
+    </p>
+
+</div>
+
+{% endblock %}

@@ -6,73 +6,67 @@
 <div class="row">
 
 <!-- Sidebar -->
-
 <div class="col-md-3">
-
 <div class="card shadow-sm p-3">
 
 <h5 class="mb-3">Filters</h5>
 
 <!-- BODY FOCUS -->
 <div class="mb-4">
-
 <h6 class="text-muted">Body Focus</h6>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="upper">
-<label class="form-check-label" for="upper">Upper Body</label>
+<label class="form-check-label">Upper Body</label>
 </div>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="lower">
-<label class="form-check-label" for="lower">Lower Body</label>
+<label class="form-check-label">Lower Body</label>
 </div>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="core">
-<label class="form-check-label" for="core">Core</label>
+<label class="form-check-label">Core</label>
 </div>
 
 </div>
 
 <!-- TRAINING TYPE -->
 <div class="mb-3">
-
 <h6 class="text-muted">Training Type</h6>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="strength">
-<label class="form-check-label" for="strength">Strength Training</label>
+<label class="form-check-label">Strength Training</label>
 </div>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="hiit">
-<label class="form-check-label" for="hiit">HIIT</label>
+<label class="form-check-label">HIIT</label>
 </div>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="cardio">
-<label class="form-check-label" for="cardio">Cardio</label>
+<label class="form-check-label">Cardio</label>
 </div>
 
 <div class="form-check">
 <input class="form-check-input" type="checkbox" id="flexibility">
-<label class="form-check-label" for="flexibility">Stretching</label>
+<label class="form-check-label">Stretching</label>
 </div>
 
 </div>
 
 <!-- RESET BUTTON -->
-<button class="btn btn-outline-secondary btn-sm w-100 mt-2">
+<button id="resetBtn" class="btn btn-outline-secondary btn-sm w-100 mt-2">
 Reset Filters
 </button>
 
 </div>
-
 </div>
 
 <!-- Workout Content -->
-
 <div class="col-md-9">
 
 <h2>Workout Programs</h2>
@@ -80,8 +74,20 @@ Reset Filters
 
 <div class="row mt-4">
 
-<!-- Card 1 -->
-<div class="col-md-6 mb-4">
+<!-- CHEST -->
+<div class="col-md-6 mb-4 workout-card" data-category="upper">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">5 Best Exercises for Chest</h5>
+<p class="card-text">Build strength and size with top chest exercises.</p>
+<span class="badge bg-secondary">Upper</span>
+<a href="/workout/chest" class="btn btn-sm btn-dark mt-3">View Plan</a>
+</div>
+</div>
+</div>
+
+<!-- PPL -->
+<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
 <div class="card h-100 shadow-sm">
 <div class="card-body">
 <h5 class="card-title">Push Pull Legs</h5>
@@ -93,21 +99,21 @@ Reset Filters
 </div>
 </div>
 
-<!-- Card 2 -->
-<div class="col-md-6 mb-4">
+<!-- UPPER LOWER -->
+<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
 <div class="card h-100 shadow-sm">
 <div class="card-body">
 <h5 class="card-title">Upper Lower Split</h5>
 <p class="card-text">Balanced 4-day training routine.</p>
 <span class="badge bg-primary">Strength</span>
-<span class="badge bg-secondary">Full Body</span>
+<span class="badge bg-secondary">Upper</span>
 <a href="/workout/upper-lower" class="btn btn-sm btn-dark mt-3">View Plan</a>
 </div>
 </div>
 </div>
 
-<!-- Card 3 -->
-<div class="col-md-6 mb-4">
+<!-- BRO SPLIT -->
+<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
 <div class="card h-100 shadow-sm">
 <div class="card-body">
 <h5 class="card-title">Bro Split</h5>
@@ -118,8 +124,8 @@ Reset Filters
 </div>
 </div>
 
-<!-- Card 4 -->
-<div class="col-md-6 mb-4">
+<!-- HIIT -->
+<div class="col-md-6 mb-4 workout-card" data-category="hiit cardio">
 <div class="card h-100 shadow-sm">
 <div class="card-body">
 <h5 class="card-title">Fat Loss HIIT</h5>
@@ -131,10 +137,76 @@ Reset Filters
 </div>
 </div>
 
+<!-- STRETCHING -->
+<div class="col-md-6 mb-4 workout-card" data-category="flexibility">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Full Body Stretching</h5>
+<p class="card-text">Improve flexibility and recovery.</p>
+<span class="badge bg-success">Stretching</span>
+</div>
 </div>
 </div>
 
 </div>
 </div>
+
+</div>
+</div>
+
+<!-- FILTER SCRIPT -->
+<script>
+
+const filters = [
+    "upper",
+    "lower",
+    "core",
+    "strength",
+    "hiit",
+    "cardio",
+    "flexibility"
+];
+
+const cards = document.querySelectorAll(".workout-card");
+
+function filterCards() {
+
+    const activeFilters = filters.filter(id => {
+        const el = document.getElementById(id);
+        return el && el.checked;
+    });
+
+    cards.forEach(card => {
+
+        const categories = card.dataset.category.split(" ");
+
+        if (activeFilters.length === 0) {
+            card.style.display = "block";
+            return;
+        }
+
+        const match = activeFilters.some(filter => categories.includes(filter));
+
+        card.style.display = match ? "block" : "none";
+
+    });
+}
+
+filters.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.addEventListener("change", filterCards);
+    }
+});
+
+document.getElementById("resetBtn").addEventListener("click", function () {
+    filters.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.checked = false;
+    });
+    filterCards();
+});
+
+</script>
 
 {% endblock %}
