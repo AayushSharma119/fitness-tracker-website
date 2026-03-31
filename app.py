@@ -87,7 +87,6 @@ def dashboard(user_id):
     """), {"user_id": user_id}).fetchone()
 
 
-    # ✅ ADD THIS QUERY
     food_logs = db.session.execute(text("""
         SELECT f.food_name, fl.quantity
         FROM food_logs fl
