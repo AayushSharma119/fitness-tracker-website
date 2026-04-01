@@ -1,61 +1,94 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="row justify-content-center align-items-center mb-5" style="min-height: 70vh;">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                    <i class="fa-solid fa-utensils fs-3 text-primary"></i>
+                </div>
+                <div>
+                    <h2 class="fw-bold mb-1">Add Food</h2>
+                    <p class="text-muted mb-0">Search and log your meals for today.</p>
+                </div>
+            </div>
 
-<h2>Add Food</h2>
+            <form method="POST">
+                <div class="mb-4 position-relative">
+                    <label class="form-label fw-semibold text-secondary ms-1">Food Name</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" name="food_name" id="foodInput" class="form-control border-start-0 ps-0" autocomplete="off" placeholder="e.g. Chicken Breast" required>
+                    </div>
+                    <div id="suggestions" class="list-group position-absolute w-100 shadow-sm mt-1" style="z-index: 1000; display: none;"></div>
+                </div>
 
-<form method="POST">
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-secondary ms-1">Quantity (grams)</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-weight-scale"></i></span>
+                        <input type="number" name="quantity" class="form-control border-start-0 ps-0" placeholder="100" required>
+                        <span class="input-group-text bg-light text-muted fw-semibold">Grams</span>
+                    </div>
+                </div>
 
-<div class="mb-3">
-<label>Food Name</label>
-<input type="text" name="food_name" id="foodInput" class="form-control" autocomplete="off" required>
+                <button class="btn btn-primary w-100 py-3 mt-2 fw-bold fs-5 shadow-sm rounded-3">
+                    <i class="fa-solid fa-plus-circle me-2"></i> Log Food
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
 
-<div class="mb-3">
-<label>Quantity (grams)</label>
-<input type="number" name="quantity" id="foodInput" class="form-control" required>
-<div id="suggestions" class="list-group"></div>
-
-<button class="btn btn-primary">Add Food</button>
-
-</form>
-
 <script>
-
 const input = document.getElementById("foodInput");
 const suggestions = document.getElementById("suggestions");
 
 input.addEventListener("keyup", async () => {
-
     const query = input.value;
 
     if (query.length < 2){
         suggestions.innerHTML = "";
+        suggestions.style.display = "none";
         return;
     }
 
-    const response = await fetch(`/search_food?q=${query}`);
-    const data = await response.json();
+    try {
+        const response = await fetch(`/search_food?q=${query}`);
+        const data = await response.json();
 
-    suggestions.innerHTML = "";
+        suggestions.innerHTML = "";
+        
+        if (data.foods && data.foods.length > 0) {
+            suggestions.style.display = "block";
+            data.foods.forEach(food => {
+                const item = document.createElement("a");
+                item.classList.add("list-group-item", "list-group-item-action", "fw-medium");
+                item.style.cursor = "pointer";
+                item.innerHTML = `<i class="fa-solid fa-utensils text-muted me-2 small"></i> ${food}`;
 
-    data.foods.forEach(food => {
-
-        const item = document.createElement("a");
-        item.classList.add("list-group-item","list-group-item-action");
-        item.textContent = food;
-
-        item.onclick = () => {
-            input.value = food;
-            suggestions.innerHTML = "";
-        };
-
-        suggestions.appendChild(item);
-
-    });
-
+                item.onclick = () => {
+                    input.value = food;
+                    suggestions.innerHTML = "";
+                    suggestions.style.display = "none";
+                };
+                suggestions.appendChild(item);
+            });
+        } else {
+            suggestions.style.display = "none";
+        }
+    } catch(e) {
+        // silently fail for network errors during typing
+    }
 });
 
+// Hide suggestions when clicking outside
+document.addEventListener('click', function(event) {
+    if (!input.contains(event.target) && !suggestions.contains(event.target)) {
+        suggestions.style.display = "none";
+    }
+});
 </script>
 
 {% endblock %}

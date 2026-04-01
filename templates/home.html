@@ -2,18 +2,60 @@
 
 {% block content %}
 
-<div class="text-center">
+<div class="container py-5 my-5">
+<div class="row align-items-center">
 
-<h1>Welcome to FitBuddy</h1>
+<div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+<h1 class="display-4 fw-bolder text-dark mb-3">
+    Level Up Your <span style="color: var(--primary-color);">Fitness</span> Journey
+</h1>
 
-<p class="lead">
-Track your calories, workouts, recipes, and health metrics.
+<p class="lead text-muted mb-4 fs-5">
+    Track your daily macros, discover new workout routines, log your meals, and achieve your health goals with FitBuddy's all-in-one platform.
 </p>
 
-<a class="btn btn-primary btn-lg mt-3" href="/register">
-Get Started
-</a>
+<div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+    <a class="btn btn-primary btn-lg px-4 py-3 shadow-sm" href="/register">
+        <i class="fa-solid fa-rocket me-2"></i> Get Started Free
+    </a>
+    <a class="btn btn-outline-dark btn-lg px-4 py-3" href="/login">
+        Log In
+    </a>
+</div>
 
+<div class="mt-5 d-flex gap-4 justify-content-center justify-content-lg-start text-muted fw-semibold">
+    <div><i class="fa-solid fa-fire text-danger me-1"></i> Calorie Tracking</div>
+    <div><i class="fa-solid fa-dumbbell text-secondary me-1"></i> Pro Workouts</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="position-relative">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-10 blur-xl rounded-circle" style="filter: blur(60px); transform: scale(0.8);"></div>
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden position-relative" style="background: linear-gradient(135deg, var(--primary-color), var(--success-color)); color: white;">
+        <div class="card-body p-5 text-center">
+            <h2 class="fw-bold mb-4">Your Progress Awaits</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-6">
+                    <div class="p-3 bg-white bg-opacity-10 rounded-3 backdrop-blur">
+                        <i class="fa-solid fa-utensils fs-1 mb-2"></i>
+                        <h5>Smart Diet</h5>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="p-3 bg-white bg-opacity-10 rounded-3 backdrop-blur">
+                        <i class="fa-solid fa-chart-pie fs-1 mb-2"></i>
+                        <h5>Analytics</h5>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-0 text-white-50">Join thousands of users transforming their lives.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
 </div>
 
 {% endblock %}

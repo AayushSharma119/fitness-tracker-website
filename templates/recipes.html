@@ -2,178 +2,197 @@
 
 {% block content %}
 
-<div class="container-fluid">
-<div class="row">
+<div class="container-fluid py-4">
+<div class="row g-4">
 
 <!-- 🔹 SIDEBAR -->
 <div class="col-md-3">
+<div class="card border-0 rounded-4 p-4 sticky-top border-top border-4 border-success" style="top: 100px;">
+<h5 class="mb-4 fw-bold"><i class="fa-solid fa-list me-2 text-success"></i>Categories</h5>
 
-<div class="card shadow-sm p-3">
-
-<h5 class="mb-3">Categories</h5>
-
-<div class="list-group">
-
-<a href="#veg" class="list-group-item list-group-item-action">
-Veg Recipes
+<div class="list-group list-group-flush gap-2">
+<a href="#veg" class="list-group-item list-group-item-action rounded-3 border-0 fw-medium text-muted">
+<i class="fa-solid fa-leaf text-success me-2"></i> Veg Recipes
 </a>
-
-<a href="#nonveg" class="list-group-item list-group-item-action">
-Non-Veg Recipes
+<a href="#nonveg" class="list-group-item list-group-item-action rounded-3 border-0 fw-medium text-muted">
+<i class="fa-solid fa-drumstick-bite text-danger me-2"></i> Non-Veg Recipes
 </a>
-
-<a href="#vegan" class="list-group-item list-group-item-action">
-Vegan Recipes
+<a href="#vegan" class="list-group-item list-group-item-action rounded-3 border-0 fw-medium text-muted">
+<i class="fa-solid fa-seedling text-info me-2"></i> Vegan Recipes
 </a>
-
 </div>
-
 </div>
-
 </div>
 
 <!-- 🔹 MAIN CONTENT -->
-<div class="col-md-9">
+<div class="col-md-9 ps-md-4">
 
-<h2>High Protein Recipes</h2>
-<p class="text-muted">Fuel your body with protein-rich meals.</p>
+<h2 class="fw-bold mb-1">High Protein Recipes</h2>
+<p class="text-muted fs-5 mb-5">Fuel your body with protein-rich meals.</p>
 
 <!-- 🥦 VEG -->
-<h4 id="veg" class="mt-4">Veg Recipes</h4>
+<div class="d-flex align-items-center mb-4 mt-2" id="veg">
+    <div class="bg-success bg-opacity-10 p-2 rounded-circle me-3">
+        <i class="fa-solid fa-leaf text-success fs-4"></i>
+    </div>
+    <h4 class="fw-bold mb-0">Veg Recipes</h4>
+</div>
 
-<div class="row mt-3">
-
+<div class="row g-4 mb-5">
 <!-- Paneer Bowl -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/paneer.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Paneer Protein Bowl</h6>
-<p class="text-muted">High protein vegetarian meal</p>
-<span class="badge bg-success">25g Protein</span>
-<a href="/recipe/paneer" class="btn btn-dark btn-sm mt-2">View Full Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/paneer.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Paneer Protein Bowl</h6>
+    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">25g Protein</span>
+</div>
+<p class="text-muted small mb-3">High protein vegetarian meal</p>
+<a href="/recipe/paneer" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Lentil Curry -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/dal.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Dal Tadka</h6>
-<p class="text-muted">Rich in plant protein</p>
-<span class="badge bg-success">18g Protein</span>
-<a href="/recipe/dal" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/dal.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Dal Tadka</h6>
+    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">18g Protein</span>
+</div>
+<p class="text-muted small mb-3">Rich in plant protein</p>
+<a href="/recipe/dal" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Chickpea Salad -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/chickpeas.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Chickpea Salad</h6>
-<p class="text-muted">Healthy and protein packed</p>
-<span class="badge bg-success">20g Protein</span>
-<a href="/recipe/chickpea" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/chickpeas.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Chickpea Salad</h6>
+    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">20g Protein</span>
+</div>
+<p class="text-muted small mb-3">Healthy and protein packed</p>
+<a href="/recipe/chickpea" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
-
 </div>
 
 <!-- 🍗 NON-VEG -->
-<h4 id="nonveg" class="mt-4">Non-Veg Recipes</h4>
+<div class="d-flex align-items-center mb-4 mt-5" id="nonveg">
+    <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
+        <i class="fa-solid fa-drumstick-bite text-danger fs-4"></i>
+    </div>
+    <h4 class="fw-bold mb-0">Non-Veg Recipes</h4>
+</div>
 
-<div class="row mt-3">
-
+<div class="row g-4 mb-5">
 <!-- Chicken -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Grilled Chicken</h6>
-<p class="text-muted">Lean protein meal</p>
-<span class="badge bg-danger">35g Protein</span>
-<a href="/recipe/chicken" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Grilled Chicken</h6>
+    <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">35g Protein</span>
+</div>
+<p class="text-muted small mb-3">Lean protein meal</p>
+<a href="/recipe/chicken" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Eggs -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/eggs.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Boiled Eggs</h6>
-<p class="text-muted">Simple high protein snack</p>
-<span class="badge bg-danger">12g Protein</span>
-<a href="/recipe/eggs" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/eggs.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Boiled Eggs</h6>
+    <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">12g Protein</span>
+</div>
+<p class="text-muted small mb-3">Simple high protein snack</p>
+<a href="/recipe/eggs" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Fish -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/fish.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Grilled Fish</h6>
-<p class="text-muted">High protein + omega 3</p>
-<span class="badge bg-danger">30g Protein</span>
-<a href="/recipe/fish" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/fish.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Grilled Fish</h6>
+    <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">30g Protein</span>
+</div>
+<p class="text-muted small mb-3">High protein + omega 3</p>
+<a href="/recipe/fish" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
-
 </div>
 
 <!-- 🌱 VEGAN -->
-<h4 id="vegan" class="mt-4">Vegan Recipes</h4>
+<div class="d-flex align-items-center mb-4 mt-5" id="vegan">
+    <div class="bg-info bg-opacity-10 p-2 rounded-circle me-3">
+        <i class="fa-solid fa-seedling text-info fs-4"></i>
+    </div>
+    <h4 class="fw-bold mb-0">Vegan Recipes</h4>
+</div>
 
-<div class="row mt-3">
-
+<div class="row g-4 mb-5">
 <!-- Tofu -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/tofu.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Tofu Stir Fry</h6>
-<p class="text-muted">Plant-based protein meal</p>
-<span class="badge bg-success">22g Protein</span>
-<a href="/recipe/tofu" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/tofu.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Tofu Stir Fry</h6>
+    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25">22g Protein</span>
+</div>
+<p class="text-muted small mb-3">Plant-based protein meal</p>
+<a href="/recipe/tofu" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Quinoa -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/quinoa.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Quinoa Bowl</h6>
-<p class="text-muted">Complete protein source</p>
-<span class="badge bg-success">18g Protein</span>
-<a href="/recipe/quinoa" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/quinoa.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Quinoa Bowl</h6>
+    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25">18g Protein</span>
+</div>
+<p class="text-muted small mb-3">Complete protein source</p>
+<a href="/recipe/quinoa" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
 
 <!-- Peanut Salad -->
-<div class="col-md-4 mb-4">
-<div class="card shadow-sm h-100">
-<img src="{{ url_for('static', filename='images/peanut.jpg') }}" class="card-img-top">
-<div class="card-body">
-<h6 class="card-title">Peanut Salad</h6>
-<p class="text-muted">Healthy fats + protein</p>
-<span class="badge bg-success">15g Protein</span>
-<a href="/recipe/peanut" class="btn btn-dark btn-sm mt-2">View Recipe</a>
+<div class="col-md-4">
+<div class="card card-hover h-100 border-0 shadow-sm p-2">
+<img src="{{ url_for('static', filename='images/peanut.jpg') }}" class="card-img-top rounded-3" style="height: 180px; object-fit: cover;">
+<div class="card-body px-2">
+<div class="d-flex justify-content-between align-items-start mb-2">
+    <h6 class="card-title fw-bold mb-0">Peanut Salad</h6>
+    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25">15g Protein</span>
+</div>
+<p class="text-muted small mb-3">Healthy fats + protein</p>
+<a href="/recipe/peanut" class="btn btn-outline-dark btn-sm rounded-pill px-3 w-100">View Recipe</a>
 </div>
 </div>
 </div>
-
 </div>
 
 </div>

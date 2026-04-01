@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <div class="bg-primary bg-opacity-10 d-inline-block p-4 rounded-circle mb-3">
+            <i class="fa-solid fa-dumbbell fs-1 text-primary"></i>
+        </div>
+        <h2 class="fw-bold mb-2">Top 5 Chest Exercises</h2>
+        <p class="text-muted fs-5">Build strength, size, and definition with these compound and isolation moves.</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+
+        <!-- Exercise 1 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/bench_press.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Bench Press">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-primary mb-2">1. Bench Press</h5>
+                    <p class="text-secondary mb-3">One of the best compound exercises for overall chest development.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-layer-group text-muted me-1"></i> 3-4 Sets</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 8-12 Reps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/incline_dumbbell.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Incline Dumbbell Press">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">2. Incline Dumbbell Press</h5>
+                    <p class="text-secondary mb-3">Targets the upper chest and improves chest shape.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-layer-group text-muted me-1"></i> 3 Sets</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 8-12 Reps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/chest_fly.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Chest Fly">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-warning mb-2">3. Chest Fly</h5>
+                    <p class="text-secondary mb-3">Helps in stretching and isolating chest muscles.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-layer-group text-muted me-1"></i> 3 Sets</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 10-15 Reps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/pushup.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Push-Ups">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-danger mb-2">4. Push-Ups</h5>
+                    <p class="text-secondary mb-3">Bodyweight exercise effective for beginners and endurance.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-layer-group text-muted me-1"></i> 3 Sets</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 12-20 Reps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/cable_cross.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Cable Crossover">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-info mb-2">5. Cable Crossover</h5>
+                    <p class="text-secondary mb-3">Provides constant tension and improves muscle definition.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-layer-group text-muted me-1"></i> 3 Sets</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 10-15 Reps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/workouts" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold shadow-sm">
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Workouts
+        </a>
+    </div>
+</div>
+
+{% endblock %}

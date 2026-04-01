@@ -436,9 +436,17 @@ def profile():
 def ppl():
     return render_template("ppl.html")
 
+@app.route("/workout/chest")
+def chest():
+    return render_template("chest.html")
+
 @app.route("/workout/upper-lower")
 def upper_lower():
     return render_template("upper_lower.html")
+
+@app.route("/workout/stretching")
+def stretching():
+    return render_template("stretching.html")
 
 @app.route("/workout/bro-split")
 def bro_split():

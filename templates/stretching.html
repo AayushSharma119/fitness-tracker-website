@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <div class="bg-success bg-opacity-10 d-inline-block p-4 rounded-circle mb-3">
+            <i class="fa-solid fa-person-praying fs-1 text-success"></i>
+        </div>
+        <h2 class="fw-bold mb-2">Full Body Stretching</h2>
+        <p class="text-muted fs-5">Improve flexibility, mobility, and recovery with these 7 essential stretches.</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+
+        <!-- Exercise 1 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/neck_rolls.png') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Neck Rolls">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">1. Neck Rolls</h5>
+                    <p class="text-secondary mb-3">Relieves tension in the neck and upper traps.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 30 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> Each Side</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/cross_shoulder.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Shoulder Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">2. Cross-Body Shoulder</h5>
+                    <p class="text-secondary mb-3">Stretches the deltoids to improve shoulder mobility.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 30 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> Each Arm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/triceps_stretch.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Triceps Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">3. Triceps Stretch</h5>
+                    <p class="text-secondary mb-3">Great for reducing arm stiffness after a heavy push day.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 30 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> Each Arm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/doorway_chest.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Chest Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">4. Doorway Chest Stretch</h5>
+                    <p class="text-secondary mb-3">Opens up the chest and counters hunched posture.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 45 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 2 Sets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/standing_quad.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Quad Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">5. Standing Quad Stretch</h5>
+                    <p class="text-secondary mb-3">Reduces knee tension by stretching the quadriceps.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 40 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> Each Leg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/seated_hams.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Hamstring Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">6. Seated Hamstring</h5>
+                    <p class="text-secondary mb-3">Essential for lower back health and hamstring flexibility.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 45 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> 2 Sets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="col-md-4">
+            <div class="card card-hover shadow-sm border-0 rounded-4 h-100 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/wall_calf.jpg') }}" class="card-img-top"
+                    style="height: 200px; object-fit: cover;" alt="Calf Stretch">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-success mb-2">7. Wall Calf Stretch</h5>
+                    <p class="text-secondary mb-3">Prevents achilles pain and improves ankle mobility.</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100 me-2"><i
+                                class="fa-solid fa-clock text-muted me-1"></i> 30 Seconds</span>
+                        <span class="badge bg-light text-dark border px-2 py-2 w-100"><i
+                                class="fa-solid fa-repeat text-muted me-1"></i> Each Leg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/workouts" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold shadow-sm">
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Workouts
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -2,148 +2,197 @@
 
 {% block content %}
 
-<div class="container-fluid">
-<div class="row">
+<div class="container-fluid py-4">
+<div class="row g-4">
 
 <!-- Sidebar -->
 <div class="col-md-3">
-<div class="card shadow-sm p-3">
+<div class="card border-0 rounded-4 p-4 sticky-top border-top border-4 border-primary" style="top: 100px;">
 
-<h5 class="mb-3">Filters</h5>
+<h5 class="mb-4 fw-bold"><i class="fa-solid fa-filter me-2 text-primary"></i>Filters</h5>
 
 <!-- BODY FOCUS -->
 <div class="mb-4">
-<h6 class="text-muted">Body Focus</h6>
+<h6 class="text-secondary fw-semibold mb-3">Body Focus</h6>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="upper">
-<label class="form-check-label">Upper Body</label>
+<label class="form-check-label text-muted" for="upper">Upper Body</label>
 </div>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="lower">
-<label class="form-check-label">Lower Body</label>
+<label class="form-check-label text-muted" for="lower">Lower Body</label>
 </div>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="core">
-<label class="form-check-label">Core</label>
+<label class="form-check-label text-muted" for="core">Core</label>
 </div>
 
 </div>
 
 <!-- TRAINING TYPE -->
-<div class="mb-3">
-<h6 class="text-muted">Training Type</h6>
+<div class="mb-4">
+<h6 class="text-secondary fw-semibold mb-3">Training Type</h6>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="strength">
-<label class="form-check-label">Strength Training</label>
+<label class="form-check-label text-muted" for="strength">Strength Training</label>
 </div>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="hiit">
-<label class="form-check-label">HIIT</label>
+<label class="form-check-label text-muted" for="hiit">HIIT</label>
 </div>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="cardio">
-<label class="form-check-label">Cardio</label>
+<label class="form-check-label text-muted" for="cardio">Cardio</label>
 </div>
 
-<div class="form-check">
+<div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" id="flexibility">
-<label class="form-check-label">Stretching</label>
+<label class="form-check-label text-muted" for="flexibility">Stretching</label>
 </div>
 
 </div>
 
 <!-- RESET BUTTON -->
-<button id="resetBtn" class="btn btn-outline-secondary btn-sm w-100 mt-2">
-Reset Filters
+<button id="resetBtn" class="btn btn-outline-secondary w-100 mt-2 fw-semibold rounded-pill">
+<i class="fa-solid fa-rotate-right me-1"></i> Reset Filters
 </button>
 
 </div>
 </div>
 
 <!-- Workout Content -->
-<div class="col-md-9">
+<div class="col-md-9 ps-md-4">
 
-<h2>Workout Programs</h2>
-<p class="text-muted">Choose a routine that fits your goal.</p>
+<h2 class="fw-bold mb-1">Workout Programs</h2>
+<p class="text-muted fs-5 mb-5">Choose a routine that fits your goals.</p>
 
-<div class="row mt-4">
+<div class="row g-4">
 
 <!-- CHEST -->
-<div class="col-md-6 mb-4 workout-card" data-category="upper">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="upper">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">5 Best Exercises for Chest</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-primary bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-dumbbell text-primary fs-4"></i>
+    </div>
+    <span class="badge bg-light text-dark border">Upper</span>
+</div>
+<h5 class="card-title fw-bold">5 Best Exercises for Chest</h5>
 <p class="card-text">Build strength and size with top chest exercises.</p>
-<span class="badge bg-secondary">Upper</span>
-<a href="/workout/chest" class="btn btn-sm btn-dark mt-3">View Plan</a>
+<a href="/workout/chest" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>
 
 <!-- PPL -->
-<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="upper strength">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">Push Pull Legs</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-success bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-weight-hanging text-success fs-4"></i>
+    </div>
+    <div>
+        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 me-1">Strength</span>
+        <span class="badge bg-light text-dark border">Upper</span>
+    </div>
+</div>
+<h5 class="card-title fw-bold">Push Pull Legs</h5>
 <p class="card-text">Best for muscle building and gym training.</p>
-<span class="badge bg-primary">Strength</span>
-<span class="badge bg-secondary">Upper</span>
-<a href="/workout/ppl" class="btn btn-sm btn-dark mt-3">View Plan</a>
+<a href="/workout/ppl" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>
 
 <!-- UPPER LOWER -->
-<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="upper strength">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">Upper Lower Split</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-info bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-arrows-up-down text-info fs-4"></i>
+    </div>
+    <div>
+        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 me-1">Strength</span>
+        <span class="badge bg-light text-dark border">Upper</span>
+    </div>
+</div>
+<h5 class="card-title fw-bold">Upper Lower Split</h5>
 <p class="card-text">Balanced 4-day training routine.</p>
-<span class="badge bg-primary">Strength</span>
-<span class="badge bg-secondary">Upper</span>
-<a href="/workout/upper-lower" class="btn btn-sm btn-dark mt-3">View Plan</a>
+<a href="/workout/upper-lower" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>
 
 <!-- BRO SPLIT -->
-<div class="col-md-6 mb-4 workout-card" data-category="upper strength">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="upper strength">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">Bro Split</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-warning bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-people-group text-warning fs-4"></i>
+    </div>
+    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Hypertrophy</span>
+</div>
+<h5 class="card-title fw-bold">Bro Split</h5>
 <p class="card-text">Classic bodybuilding routine.</p>
-<span class="badge bg-primary">Hypertrophy</span>
-<a href="/workout/bro-split" class="btn btn-sm btn-dark mt-3">View Plan</a>
+<a href="/workout/bro-split" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>
 
 <!-- HIIT -->
-<div class="col-md-6 mb-4 workout-card" data-category="hiit cardio">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="hiit cardio">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">Fat Loss HIIT</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-danger bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-fire text-danger fs-4"></i>
+    </div>
+    <div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 me-1">HIIT</span>
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Cardio</span>
+    </div>
+</div>
+<h5 class="card-title fw-bold">Fat Loss HIIT</h5>
 <p class="card-text">Burn calories and lose fat fast.</p>
-<span class="badge bg-danger">HIIT</span>
-<span class="badge bg-warning text-dark">Cardio</span>
-<a href="/workout/hiit" class="btn btn-sm btn-dark mt-3">View Plan</a>
+<a href="/workout/hiit" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>
 
 <!-- STRETCHING -->
-<div class="col-md-6 mb-4 workout-card" data-category="flexibility">
-<div class="card h-100 shadow-sm">
+<div class="col-md-6 workout-card" data-category="flexibility">
+<div class="card card-hover h-100 p-3">
 <div class="card-body">
-<h5 class="card-title">Full Body Stretching</h5>
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div class="bg-success bg-opacity-10 p-3 rounded-circle">
+        <i class="fa-solid fa-person-praying text-success fs-4"></i>
+    </div>
+    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">Stretching</span>
+</div>
+<h5 class="card-title fw-bold">Full Body Stretching</h5>
 <p class="card-text">Improve flexibility and recovery.</p>
-<span class="badge bg-success">Stretching</span>
+<a href="/workout/stretching" class="btn btn-primary rounded-pill px-4 mt-3">
+    View Plan <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
 </div>
 </div>
 </div>

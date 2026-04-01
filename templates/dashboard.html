@@ -2,150 +2,164 @@
 
 {% block content %}
 
-<h2>Welcome {{ user.name }}</h2>
-<p class="text-muted">Welcome to FitBuddy — track your nutrition progress.</p>
-
-<div class="row mt-4">
-
-<div class="col-md-3">
-<div class="card text-center p-3">
-<h4>Calories</h4>
-<h2>{{ calories }} kcal</h2>
-</div>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold mb-1">Welcome, {{ user.name }}! 👋</h2>
+        <p class="text-muted mb-0 fs-5">Track your daily nutrition progress.</p>
+    </div>
+    <a class="btn btn-primary shadow-sm" href="/add_food/{{ user.id }}">
+        <i class="fa-solid fa-plus me-1"></i> Add Food
+    </a>
 </div>
 
-<div class="col-md-3">
-<div class="card text-center p-3">
-<h4>Protein</h4>
-<h2>{{ protein }} g</h2>
-</div>
-</div>
+<div class="row g-4 mb-5">
+    <div class="col-md-3">
+        <div class="card card-hover text-center p-4 border-top border-4 border-primary h-100">
+            <i class="fa-solid fa-fire text-primary fs-2 mb-3"></i>
+            <h5 class="text-muted fw-semibold">Calories</h5>
+            <h2 class="fw-bold mb-0 text-dark">{{ calories }} <span class="fs-6 text-muted fw-normal">kcal</span></h2>
+        </div>
+    </div>
 
-<div class="col-md-3">
-<div class="card text-center p-3">
-<h4>Carbs</h4>
-<h2>{{ carbs }} g</h2>
-</div>
-</div>
+    <div class="col-md-3">
+        <div class="card card-hover text-center p-4 border-top border-4 border-success h-100">
+            <i class="fa-solid fa-drumstick-bite text-success fs-2 mb-3"></i>
+            <h5 class="text-muted fw-semibold">Protein</h5>
+            <h2 class="fw-bold mb-0 text-dark">{{ protein }} <span class="fs-6 text-muted fw-normal">g</span></h2>
+        </div>
+    </div>
 
-<div class="col-md-3">
-<div class="card text-center p-3">
-<h4>Fat</h4>
-<h2>{{ fat }} g</h2>
-</div>
-</div>
+    <div class="col-md-3">
+        <div class="card card-hover text-center p-4 border-top border-4 border-warning h-100">
+            <i class="fa-solid fa-wheat-awn text-warning fs-2 mb-3"></i>
+            <h5 class="text-muted fw-semibold">Carbs</h5>
+            <h2 class="fw-bold mb-0 text-dark">{{ carbs }} <span class="fs-6 text-muted fw-normal">g</span></h2>
+        </div>
+    </div>
 
-</div>
-
-<a class="btn btn-success mt-4" href="/add_food/{{ user.id }}">
-Add Food
-</a>
-
-<!-- CALORIE PROGRESS BAR -->
-
-<div class="card mt-4">
-<div class="card-body">
-
-<h5 class="card-title">Calorie Progress</h5>
-
-{% if goal > 0 %}
-
-<p>{{ calories }} / {{ goal }} kcal</p>
-
-<div class="progress" style="height:25px;">
-
-<div class="progress-bar bg-success"
-role="progressbar"
-style="width: {{ (calories/goal*100)|round(1) }}%">
-
-{{ (calories/goal*100)|round(1) }}%
-
+    <div class="col-md-3">
+        <div class="card card-hover text-center p-4 border-top border-4 border-info h-100">
+            <i class="fa-solid fa-cheese text-info fs-2 mb-3"></i>
+            <h5 class="text-muted fw-semibold">Fat</h5>
+            <h2 class="fw-bold mb-0 text-dark">{{ fat }} <span class="fs-6 text-muted fw-normal">g</span></h2>
+        </div>
+    </div>
 </div>
 
+<div class="row g-4 mb-5">
+    <!-- CALORIE PROGRESS BAR -->
+    <div class="col-lg-6">
+        <div class="card h-100 p-4">
+            <div class="card-body p-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0 fw-bold"><i class="fa-solid fa-bullseye text-primary me-2"></i>Calorie Goal</h5>
+                    {% if goal > 0 %}
+                        <span class="badge bg-light text-dark border">{{ calories }} / {{ goal }} kcal</span>
+                    {% endif %}
+                </div>
+
+                {% if goal > 0 %}
+                <div class="progress mt-4 mb-2" style="height: 28px;">
+                    <div class="progress-bar bg-success"
+                        role="progressbar"
+                        style="width: {{ (calories/goal*100)|round(1) }}%">
+                        {{ (calories/goal*100)|round(1) }}%
+                    </div>
+                </div>
+                <p class="text-muted text-end small">Daily Limit</p>
+                {% else %}
+                <div class="alert alert-light mt-4 border text-center">
+                    <i class="fa-solid fa-info-circle text-muted mb-2 fs-4"></i>
+                    <p class="text-muted mb-3">Calculate your maintenance calories to enable progress tracking.</p>
+                    <a href="/calorie_calculator" class="btn btn-primary btn-sm px-4">Calculate Goals</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- MACRO CHART -->
+    <div class="col-lg-6">
+        <div class="card h-100 p-4">
+            <div class="card-body p-0">
+                <h5 class="fw-bold mb-4"><i class="fa-solid fa-chart-pie text-secondary me-2"></i>Macronutrient Split</h5>
+                <div style="width:100%; height: 260px;">
+                    <canvas id="macroChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-{% else %}
-
-<p class="text-muted">
-Calculate your maintenance calories to enable progress tracking.
-</p>
-
-<a href="/calorie_calculator" class="btn btn-primary">
-Calculate Calories
-</a>
-
-{% endif %}
-
+<div class="card p-4 mb-5">
+    <div class="card-body p-0">
+        <h5 class="fw-bold mb-4"><i class="fa-solid fa-list-check text-success me-2"></i>Today's Food Log</h5>
+        
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="rounded-start ps-3">Food Item</th>
+                        <th class="rounded-end text-end pe-3">Quantity (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food in food_logs %}
+                    <tr>
+                        <td class="ps-3 fw-medium">
+                            <i class="fa-solid fa-utensils text-muted me-2 small"></i> {{ food.food_name }}
+                        </td>
+                        <td class="text-end pe-3 text-muted">{{ food.quantity }}g</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="2" class="text-center text-muted py-4">
+                            You haven't logged any food today. <a href="/add_food/{{ user.id }}" class="text-primary text-decoration-none">Add something now.</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-</div>
 
-<hr class="mt-5">
-
-<h4 class="mt-4">Macronutrient Intake</h4>
-
-<div style="width:400px; height:250px;">
-<canvas id="macroChart"></canvas>
-</div>
-
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-
-const ctx = document.getElementById('macroChart');
-
-new Chart(ctx, {
-type: 'bar',
-data: {
-labels: ['Protein', 'Carbs', 'Fat'],
-datasets: [{
-label: 'Grams',
-data: [{{ protein }}, {{ carbs }}, {{ fat }}],
-backgroundColor: [
-'#ff6384',
-'#36a2eb',
-'#ffce56'
-]
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
-
+    const ctx = document.getElementById('macroChart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Protein (g)', 'Carbs (g)', 'Fat (g)'],
+                datasets: [{
+                    data: [{{ protein|default(0) }}, {{ carbs|default(0) }}, {{ fat|default(0) }}],
+                    backgroundColor: [
+                        '#10b981', /* Success green */
+                        '#f59e0b', /* Warning yellow */
+                        '#0ea5e9'  /* Info blue */
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: { family: "'Inter', sans-serif" }
+                        }
+                    }
+                }
+            }
+        });
+    }
 </script>
-
-<hr class="mt-5">
-
-<h4>Today's Food Log</h4>
-
-<table class="table table-striped mt-3">
-
-<thead>
-<tr>
-<th>Food</th>
-<th>Quantity (g)</th>
-</tr>
-</thead>
-
-<tbody>
-
-{% for food in food_logs %}
-
-<tr>
-<td>{{ food.food_name }}</td>
-<td>{{ food.quantity }}</td>
-</tr>
-
-{% endfor %}
-
-</tbody>
-
-</table>
 
 {% endblock %}
